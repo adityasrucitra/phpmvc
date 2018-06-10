@@ -1,0 +1,17 @@
+<?php
+$action = $this->getAction();
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="/style.css" rel="stylesheet" media="all">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/home/index" <?php echo ($action == 'index' ? 'class=active' : '' ); ?>>home</a></li>
+                <li><a href="/home/aboutUs" <?php echo ($action == 'aboutUs' ? 'class=active' : '' ); ?>>about us</a></li>
+            </ul>
+        </nav>

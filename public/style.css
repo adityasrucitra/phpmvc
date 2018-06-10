@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 10, 2018, 2:53:47 PM
+    Author     : adityas
+*/
+
+nav{
+    background-color: deepskyblue;
+    color: white;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover:not(.active){
+    background-color: lightskyblue;
+}
+
+.active{
+    background-color: black;
+}
