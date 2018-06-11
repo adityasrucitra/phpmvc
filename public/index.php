@@ -14,13 +14,22 @@ define('CORE', ROOT . 'app' . DS . 'core' . DS);
 define('DATA', ROOT . 'app' . DS . 'data' . DS);
 define('CONTROLLER', ROOT . 'app' . DS . 'controller' . DS);
 
-$modules = [ROOT, APP, CORE, CONTROLLER, DATA];
+/**
+ * 
+ */
+function myAutoloader3() {
+    $modules = [APP, CORE, CONTROLLER, DATA];
+    for ($i = 0; $i < count($modules); $i++) {
+        $files = scandir($modules[$i]);
+        for ($j = 0; $j < count($files); $j++) {
+            $info = (new SplFileInfo($files[$j]))->getExtension();
+            if ($info === 'php') {
+                require $modules[$i] . $files[$j];
+            }
+        }
+    }
+}
+myAutoloader3();
 
-set_include_path(get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, $modules));
-
-spl_autoload_register('spl_autoload');
-
-//var_dump(get_include_path());
-
-require_once CORE . 'Application.php';
+//run application..
 new Application;
