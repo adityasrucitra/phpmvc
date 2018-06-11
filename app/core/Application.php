@@ -24,7 +24,6 @@ class Application {
     public function __construct() {
         $this->prepareUrl();
         if (file_exists(CONTROLLER . ucfirst($this->controller) . '.php')) {
-            require_once CONTROLLER . ucfirst($this->controller) . '.php';
             $this->controller = new $this->controller;
             if (method_exists($this->controller, $this->method)) {
                 call_user_func_array([$this->controller, $this->method], $this->params);
