@@ -11,7 +11,6 @@
  *
  * @author adityas
  */
-require_once CORE . 'Controller.php';
 
 class personController extends Controller {
 
